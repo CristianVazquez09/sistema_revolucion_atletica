@@ -6,31 +6,23 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Categoria {
+public class Inscripcion {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Integer idCategoria;
+    private Integer idInscripcion;
 
-    @Column(length = 40, nullable = false)
+    @Column(length =60,nullable = false)
     private String nombre;
 
-    @Column(nullable = false)
-    private boolean activo;
-
-
-
-    @PrePersist
-    public void asignarEstado() {
-        this.activo = true;
-    }
-
+    @Column(precision = 6, scale = 2, nullable = false)
+    private BigDecimal precio;
 }

@@ -13,10 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "usuario")
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer idUsuario;
 
@@ -24,7 +24,7 @@ public class Usuario {
     private String nombreUsuario;
 
     @Column(nullable = false, length = 60)
-    private String constrasenia;
+    private String contrasenia;
 
     @Column(nullable = false)
     private boolean activo;

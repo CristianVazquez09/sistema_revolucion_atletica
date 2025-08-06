@@ -17,7 +17,7 @@ public class Entrenador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long idEntrenador;
+    private Integer idEntrenador;
 
     @Column(length = 40, nullable = false)
     private String nombre;

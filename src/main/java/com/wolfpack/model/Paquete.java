@@ -8,8 +8,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Data
 @NoArgsConstructor
@@ -21,7 +19,7 @@ public class Paquete {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long idPaquete;
+    private Integer idPaquete;
 
     @Column(nullable = false, length = 50)
     private String nombre;
@@ -32,6 +30,9 @@ public class Paquete {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     private TiempoPlan tiempo;
+
+    @Column(precision = 6, scale = 2, nullable = false)
+    private BigDecimal costoInscripcion;
 
     @Column(nullable = false)
     private boolean activo;

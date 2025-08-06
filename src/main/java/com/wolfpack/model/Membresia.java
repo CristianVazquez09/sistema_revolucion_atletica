@@ -1,5 +1,6 @@
 package com.wolfpack.model;
 
+import com.wolfpack.model.enums.TipoMovimiento;
 import com.wolfpack.model.enums.TipoPago;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,20 +23,33 @@ public class Membresia {
     @EqualsAndHashCode.Include
     private Long idMembresia;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_socio", nullable = false, foreignKey = @ForeignKey(name = "FK_MEMBRESIA_SOCIO"))
     private Socio socio;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_paquete", nullable = false, foreignKey = @ForeignKey(name = "FK_MEMBRESIA_PAQUETE"))
+    private Paquete paquete;
+
     @Column(nullable = false)
-    private LocalDate fechaIngreso;
+    private LocalDate fechaInicio;
 
-    @OneToMany(mappedBy = "membresia", cascade = CascadeType.ALL,  orphanRemoval = true)
-    private List<MembresiaServicio> servicios;
+    @Column(nullable = false)
+    private LocalDate fechaFin;
 
-    @PrePersist
-    public void asignarFechaIngreso() {
-        this.fechaIngreso = LocalDate.now();
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private TipoMovimiento movimiento;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private TipoPago tipoPago;
+
+    @Column(precision = 6, scale = 2, nullable = false)
+    private BigDecimal descuento;
+
+    @Column(precision = 6, scale = 2, nullable = false)
+    private BigDecimal total;
 
 
 

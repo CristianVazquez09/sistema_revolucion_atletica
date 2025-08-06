@@ -42,7 +42,7 @@ public class Socio {
 
     //private String fotoUrl;
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private Genero genero;
 
     //private byte[] huellaDigital;
