@@ -34,6 +34,21 @@ public class ProductoController {
         return ResponseEntity.ok(convertirADto(obj));
     }
 
+    @GetMapping("/buscar/{idCategoria}")
+    public ResponseEntity<List<ProductoDTO>> buscarPorCategoria(@PathVariable("idCategoria") Integer idCategoria) throws Exception {
+        List<ProductoDTO> list = service.buscarProductosPorCategoria(idCategoria).stream().map(this::convertirADto).toList();
+
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/buscar/nombre/{nombreProducto}")
+    public ResponseEntity<List<ProductoDTO>> buscarPorCategoriaYNombre(@PathVariable("nombreProducto") String nombreProducto){
+        List<ProductoDTO> list = service.buscarProductosNombre(nombreProducto).stream().map(this::convertirADto).toList();
+
+        return ResponseEntity.ok(list);
+    }
+
+
     @PostMapping
     public ResponseEntity<Void> guardar(@RequestBody ProductoDTO dto) throws Exception{
         Producto obj = service.guardar(convertirAEntidad(dto));

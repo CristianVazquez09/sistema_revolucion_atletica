@@ -42,7 +42,7 @@ public class Membresia {
     private TipoMovimiento movimiento;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 30)
     private TipoPago tipoPago;
 
     @Column(precision = 6, scale = 2, nullable = false)

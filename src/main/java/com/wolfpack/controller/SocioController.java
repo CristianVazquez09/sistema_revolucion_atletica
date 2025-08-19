@@ -5,6 +5,10 @@ import com.wolfpack.model.Socio;
 import com.wolfpack.service.ISocioService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -26,6 +30,22 @@ public class SocioController {
 
         return ResponseEntity.ok(list);
     }
+
+    @GetMapping("/buscar")
+    public ResponseEntity<Page<SocioDTO>> buscarSocios(Pageable pageable) {
+        Page<SocioDTO> list = service.buscarSocios(pageable).map(this::convertirADto);
+
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/buscar/{nombre}")
+    public ResponseEntity<Page<SocioDTO>> buscarSociosPorNombre(@PathVariable("nombre") String nombre, Pageable pageable) {
+
+
+        Page<SocioDTO> lista = service.buscarSociosPorNombre(nombre, pageable).map(this::convertirADto);
+        return ResponseEntity.ok(lista);
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<SocioDTO> buscarPorId(@PathVariable("id") Long id) throws Exception {

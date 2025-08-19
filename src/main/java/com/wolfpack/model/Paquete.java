@@ -28,7 +28,7 @@ public class Paquete {
     private BigDecimal precio;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 10)
+    @Column(nullable = false, length = 20)
     private TiempoPlan tiempo;
 
     @Column(precision = 6, scale = 2, nullable = false)
