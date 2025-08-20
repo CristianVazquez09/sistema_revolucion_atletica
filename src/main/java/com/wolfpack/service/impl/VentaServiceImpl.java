@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class VentaServiceImpl extends CRUDImpl<Venta, Long> implements IVentaService {
+public class VentaServiceImpl extends TenantCRUDImpl<Venta, Long> implements IVentaService {
 
     private final IVentaRepo ventaRepo;
     @Override

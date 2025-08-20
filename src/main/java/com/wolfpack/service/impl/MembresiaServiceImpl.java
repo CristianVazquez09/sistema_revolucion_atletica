@@ -13,7 +13,7 @@ import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
-public class MembresiaServiceImpl extends CRUDImpl<Membresia, Long> implements IMembresiaService {
+public class MembresiaServiceImpl extends TenantCRUDImpl<Membresia, Long> implements IMembresiaService {
 
     private final IMembresiaRepo membresiaRepo;
     private  final IPaqueteRepo paqueteRepo;

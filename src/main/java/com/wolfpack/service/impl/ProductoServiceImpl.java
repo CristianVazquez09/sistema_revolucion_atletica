@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ProductoServiceImpl extends CRUDImpl<Producto, Long> implements IProductoService {
+public class ProductoServiceImpl extends TenantCRUDImpl<Producto, Long> implements IProductoService {
 
     private final IProductoRepo productoRepo;
     private final ICategoriaRepo categoriaRepo;

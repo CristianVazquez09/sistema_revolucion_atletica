@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AccesoriaPersonalizadaServiceImpl extends CRUDImpl<AccesoriaPersonalizada, Long> implements IAccesoriaPersonalizadaService {
+public class AccesoriaPersonalizadaServiceImpl extends TenantCRUDImpl<AccesoriaPersonalizada, Long> implements IAccesoriaPersonalizadaService {
 
     private final IAccesoriaPersonalizadaRepo accesoriaRepo;
     @Override

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UsuarioServiceImpl extends CRUDImpl<Usuario, Integer> implements IUsuarioService {
+public class UsuarioServiceImpl extends TenantCRUDImpl<Usuario, Integer> implements IUsuarioService {
 
     private final IUsuarioRepo usuarioRepo;
     private final IRolRepo rolRepo;

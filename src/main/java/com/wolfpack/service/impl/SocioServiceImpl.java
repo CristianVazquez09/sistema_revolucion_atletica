@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SocioServiceImpl extends CRUDImpl<Socio, Long> implements ISocioService {
+public class SocioServiceImpl extends TenantCRUDImpl<Socio, Long> implements ISocioService {
 
     private final ISocioRepo socioRepo;
     @Override

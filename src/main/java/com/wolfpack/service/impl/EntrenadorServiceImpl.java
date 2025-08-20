@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EntrenadorServiceImpl extends CRUDImpl<Entrenador, Integer> implements IEntrenadorService {
+public class EntrenadorServiceImpl extends TenantCRUDImpl<Entrenador, Integer> implements IEntrenadorService {
 
     private final IEntrenadorRepo entrenadorRepo;
     @Override

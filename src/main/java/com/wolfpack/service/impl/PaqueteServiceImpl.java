@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PaqueteServiceImpl extends CRUDImpl<Paquete, Integer> implements IPaqueteService {
+public class PaqueteServiceImpl extends TenantCRUDImpl<Paquete, Integer> implements IPaqueteService {
 
     private final IPaqueteRepo paqueteRepo;
     @Override
