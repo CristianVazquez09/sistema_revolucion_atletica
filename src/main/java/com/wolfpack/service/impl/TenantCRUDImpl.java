@@ -1,8 +1,8 @@
 package com.wolfpack.service.impl;
 
 import com.wolfpack.model.Gimnasio;
-import com.wolfpack.util.TenantContext;
-import com.wolfpack.util.TenantScoped;
+import com.wolfpack.multitenancy.core.TenantContext;
+import com.wolfpack.multitenancy.jpa.TenantScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.PersistenceContext;

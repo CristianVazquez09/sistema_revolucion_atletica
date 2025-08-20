@@ -1,4 +1,4 @@
-package com.wolfpack.util;
+package com.wolfpack.multitenancy.jpa;
 
 import com.wolfpack.model.Gimnasio;
 import jakarta.persistence.*;

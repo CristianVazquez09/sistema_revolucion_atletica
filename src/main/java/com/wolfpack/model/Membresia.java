@@ -2,7 +2,7 @@ package com.wolfpack.model;
 
 import com.wolfpack.model.enums.TipoMovimiento;
 import com.wolfpack.model.enums.TipoPago;
-import com.wolfpack.util.TenantScoped;
+import com.wolfpack.multitenancy.jpa.TenantScoped;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

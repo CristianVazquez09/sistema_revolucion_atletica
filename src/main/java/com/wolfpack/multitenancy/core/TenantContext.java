@@ -1,4 +1,4 @@
-package com.wolfpack.util;
+package com.wolfpack.multitenancy.core;
 
 public final class TenantContext {
     private static final ThreadLocal<Long> CURRENT = new ThreadLocal<>();

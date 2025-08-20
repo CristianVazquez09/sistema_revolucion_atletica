@@ -1,11 +1,9 @@
 package com.wolfpack.service.impl;
 
 import com.wolfpack.model.Categoria;
-import com.wolfpack.model.Gimnasio;
 import com.wolfpack.repo.IGenericRepo;
 import com.wolfpack.repo.ICategoriaRepo;
 import com.wolfpack.service.ICategoriaService;
-import com.wolfpack.util.TenantContext;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
