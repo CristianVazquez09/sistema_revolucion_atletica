@@ -52,6 +52,10 @@ public class Membresia  extends TenantScoped {
     @Column(precision = 6, scale = 2, nullable = false)
     private BigDecimal total;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false, foreignKey = @ForeignKey(name = "FK_VENTA_USUARIO"))
+    private Usuario usuario;
+
 
 
 }

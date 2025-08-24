@@ -40,6 +40,10 @@ public class AccesoriaPersonalizada extends TenantScoped {
     @JoinColumn(name = "id_socio", nullable = false, foreignKey = @ForeignKey(name = "FK_ACCESORIA_SOCIO"))
     private Socio socio;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false, foreignKey = @ForeignKey(name = "FK_VENTA_USUARIO"))
+    private Usuario usuario;
+
     @PrePersist
     public void asignarEstado() {
         this.activo = true;
