@@ -5,8 +5,9 @@ spring:
     database: postgresql
     show-sql: false
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: true
   datasource:
     url: ${DATABASE_URL}
     username: ${DATABASE_USERNAME}
@@ -16,11 +17,26 @@ spring:
       enabled: true
   profiles:
     default: dev
+  mvc:
+    problemdetails:
+      enabled: true
 server:
   port: 8081
+  error:
+    include-binding-errors: never
+    include-message: never
 
-
-
-
-
-
+#logging:
+  #level:
+    #root: INFO
+    # SQL que ejecuta Hibernate
+   # org.hibernate.SQL: DEBUG
+    # Valores vinculados a los parámetros (Hibernate 6)
+    #org.hibernate.orm.jdbc.bind: TRACE
+    # (opcional) extracción de columnas del ResultSet
+   #org.hibernate.orm.jdbc.extract: TRACE
+    # (opcional) más detalle de JPA/Transacciones
+    #org.springframework.orm.jpa: DEBUG
+    #org.springframework.transaction: DEBUG
+    # (recomendado) tu paquete para ver el filtro del tenant y servicios
+    #com.wolfpack: DEBUG

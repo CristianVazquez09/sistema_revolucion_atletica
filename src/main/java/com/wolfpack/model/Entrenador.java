@@ -1,23 +1,22 @@
 package com.wolfpack.model;
 
+import com.wolfpack.multitenancy.jpa.TenantScoped;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 @Entity
-public class Entrenador {
+public class Entrenador  extends TenantScoped {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long idEntrenador;
+    private Integer idEntrenador;
 
     @Column(length = 40, nullable = false)
     private String nombre;
