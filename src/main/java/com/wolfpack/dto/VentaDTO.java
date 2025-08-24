@@ -1,6 +1,7 @@
 package com.wolfpack.dto;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wolfpack.dto.usuario.UsuarioRequestDTO;
 import com.wolfpack.dto.usuario.UsuarioResponseDTO;
 import com.wolfpack.model.enums.TipoPago;
@@ -22,6 +23,7 @@ public class VentaDTO {
     @EqualsAndHashCode.Include
     private Long idVenta;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LocalDateTime fecha;
     private BigDecimal total;
     private TipoPago tipoPago;
@@ -29,7 +31,7 @@ public class VentaDTO {
     @JsonManagedReference
     private List<DetalleVentaDTO> detalles;
 
-    private UsuarioResponseDTO usuario;
+    //private UsuarioResponseDTO usuario;
 
 
 }

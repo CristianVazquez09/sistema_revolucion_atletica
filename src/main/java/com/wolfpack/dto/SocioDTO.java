@@ -1,5 +1,6 @@
 package com.wolfpack.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wolfpack.model.enums.Genero;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,4 +38,7 @@ public class SocioDTO {
     private byte[] huellaDigital;
     private String fotoUrl;
     */
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private boolean activo;
 }
