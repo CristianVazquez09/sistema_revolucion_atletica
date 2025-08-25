@@ -25,18 +25,8 @@ server:
   error:
     include-binding-errors: never
     include-message: never
-
-#logging:
-  #level:
-    #root: INFO
-    # SQL que ejecuta Hibernate
-   # org.hibernate.SQL: DEBUG
-    # Valores vinculados a los parámetros (Hibernate 6)
-    #org.hibernate.orm.jdbc.bind: TRACE
-    # (opcional) extracción de columnas del ResultSet
-   #org.hibernate.orm.jdbc.extract: TRACE
-    # (opcional) más detalle de JPA/Transacciones
-    #org.springframework.orm.jpa: DEBUG
-    #org.springframework.transaction: DEBUG
-    # (recomendado) tu paquete para ver el filtro del tenant y servicios
-    #com.wolfpack: DEBUG
+springdoc:
+  swagger-ui:
+    path: /docs
+  api-docs:
+    path: /v3/api-docs
